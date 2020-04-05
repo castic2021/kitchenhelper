@@ -35,6 +35,7 @@
 
 
 ## 系统结构
+![](https://github.com/castic2021/kitchenhelper/blob/master/20200405175101.jpg)
 ![](系统结构图.png)
 
 
