@@ -75,4 +75,16 @@
 
 # 附录
 调查初始数据![](Screenshot_20200405_102723_com.tencent.mm.jpg)
-Python与树莓派之间的通信协议![](通信协议.txt)
+Python与树莓派之间的通信协议
+A: 1 - on
+a: 1 - off
+B: 2 - on
+b: 2 - off
+C: 3 - on
+c: 3 - off
+D: 4 - on
+d: 4 - off
+E: 5 - on
+e: 5 - off
+F: 6 - on
+f: 6 - off
