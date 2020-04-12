@@ -102,7 +102,40 @@ A:自然语言处理是计算机科学领域与人工智能领域中的一个重
 这是机器生成的语音，用于与用户的交互。经过测试，语音播报功能达到100%的准确率，可以使用户理解厨房助手的表达。
 ![](捕获.PNG)
 ### 4.4 网络爬虫获取菜谱
-通过使用网络爬虫，
+通过使用网络爬虫，获取了特定网站的菜谱信息，并用程序将其转化为执行指令。  
+部分代码（测试）：  
+import serial  
+import serial.tools.list_ports  
+import time  
+ports = list(serial.tools.list_ports.comports())  
+print (ports)  
+for p in ports:  
+    print (p[1])  
+    if "Arduino" in p[1] or "UART" in p[1]:  
+	    ser=serial.Serial(port=p[0])  
+    else :  
+	    print ("No Arduino Device was found connected to the computer")  
+#ser=serial.Serial(port='COM4')  
+#ser=serial.Serial(port='/dev/ttymodem542')  
+#wait 2 seconds for arduino board restart 
+time.sleep(2)  
+#0:soy sauce  a  
+#1:vinager    b  
+#2:rice wine  c  
+netspices=[5,15,50]  
+def getsecondv(nts):  
+    result=[]  
+    for i in range(3):  
+        cmd0o=ord("A")  
+        cmd=chr(cmd0o+i)+str(nts[i]//20+1)  
+        result.append(cmd)  
+    return result  
+cmds=getsecondv(netspices)  
+for cmd in cmds:  
+    print("send ",cmd)  
+    ser.write(cmd.encode())  
+    time.sleep(5)  
+
 ## 5. 讨论
 
 # 结论
