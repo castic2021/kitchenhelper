@@ -135,7 +135,7 @@ for cmd in cmds:
     print("send ",cmd)  
     ser.write(cmd.encode())  
     time.sleep(5)  
-
+经过爬取麻婆豆腐的菜谱，证明了爬虫程序的可靠性。
 ## 5. 讨论
 
 # 结论
