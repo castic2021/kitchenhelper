@@ -125,7 +125,7 @@ A:自然语言处理是计算机科学领域与人工智能领域中的一个重
 
 # 附录
 调查初始数据![](Screenshot_20200405_102723_com.tencent.mm.jpg)
-Python与树莓派之间的通信协议
+Arduino与树莓派之间的通信协议
 A: 1 - on  
 a: 1 - off  
 B: 2 - on  
