@@ -93,6 +93,7 @@ A:自然语言处理是计算机科学领域与人工智能领域中的一个重
 ![](https://github.com/castic2021/kitchenhelper/blob/master/20200405175101.jpg)  
 通过设定程序，测试了三个水泵电机输送水的效率。使用两个容量为100毫升的量杯，测定了开启各个电机后n秒泵出的水量，得知各电机泵出液体的速率一致且稳定。结果如下：
 ![](工作效率.PNG)
+![](主程序.PNG)
 经过试验，取得了各马达每秒输送的调料量，通过这一试验可以通过控制时间实现调料的量化控制。
 ### 4.3 语音播报功能
 机器语音生成：  
@@ -108,37 +109,7 @@ A:自然语言处理是计算机科学领域与人工智能领域中的一个重
 ### 4.4 网络爬虫获取菜谱
 通过使用网络爬虫，获取了特定网站的菜谱信息，并用程序将其转化为执行指令。  
 部分代码（测试）：  
-import serial  
-import serial.tools.list_ports  
-import time  
-ports = list(serial.tools.list_ports.comports())  
-print (ports)  
-for p in ports:  
-    print (p[1])  
-    if "Arduino" in p[1] or "UART" in p[1]:  
-	    ser=serial.Serial(port=p[0])  
-    else :  
-	    print ("No Arduino Device was found connected to the computer")  
-#ser=serial.Serial(port='COM4')  
-#ser=serial.Serial(port='/dev/ttymodem542')  
-#wait 2 seconds for arduino board restart 
-time.sleep(2)  
-#0:soy sauce  a  
-#1:vinager    b  
-#2:rice wine  c  
-netspices=[5,15,50]  
-def getsecondv(nts):  
-    result=[]  
-    for i in range(3):  
-        cmd0o=ord("A")  
-        cmd=chr(cmd0o+i)+str(nts[i]//20+1)  
-        result.append(cmd)  
-    return result  
-cmds=getsecondv(netspices)  
-for cmd in cmds:  
-    print("send ",cmd)  
-    ser.write(cmd.encode())  
-    time.sleep(5)  
+
 经过爬取麻婆豆腐的菜谱，证明了爬虫程序的可靠性。
 ## 5. 讨论
 
